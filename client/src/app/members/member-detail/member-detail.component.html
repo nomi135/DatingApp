@@ -49,11 +49,12 @@
                 <tab heading="Photos" #photoTab="tab">
                    @if (photoTab.active) {
                     <gallery 
-                    [items]="images" 
-                    [counter]="true"
-                    [thumbs]="images"
-                    [autoplay]="true"
-                    class="gallery">
+                        [items]="images" 
+                        [itemAutosize]="true"
+                        [counter]="true"
+                        [thumbs]="images"
+                        [autoplay]="true"
+                        class="gallery">
                     </gallery>
                    }
                 </tab>
