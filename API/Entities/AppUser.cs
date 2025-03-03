@@ -4,7 +4,7 @@ namespace API.Entities
 {
     public class AppUser
     {
-        public int Id { get; set; }
+        public int Id { get; set; } // EF Core assumes this is the Primary Key (PK) and auto-incremented due to convention
         public required string UserName { get; set; }
         public byte[] PasswordHash { get; set; } = [];
         public byte[] PasswordSalt { get; set; } = [];
