@@ -1,13 +1,10 @@
 ﻿using API.Extensions;
+using Microsoft.AspNetCore.Identity;
 
 namespace API.Entities
 {
-    public class AppUser
+    public class AppUser : IdentityUser<int> // IdentityUser is a class provided by ASP.NET Core Identity
     {
-        public int Id { get; set; } // EF Core assumes this is the Primary Key (PK) and auto-incremented due to convention
-        public required string UserName { get; set; }
-        public byte[] PasswordHash { get; set; } = [];
-        public byte[] PasswordSalt { get; set; } = [];
         public DateOnly DateOfBirth { get; set; }
         public required string KnownAs { get; set; }
         public DateTime Created { get; set; } = DateTime.UtcNow;
@@ -23,5 +20,6 @@ namespace API.Entities
         public List<UserLike> LikedUsers { get; set; } = [];
         public List<Message> MessagesSent { get; set; } = [];
         public List<Message> MessagesReceived { get; set; } = [];
+        public ICollection<AppUserRole> UserRoles { get; set; } = [];
     }
 }
