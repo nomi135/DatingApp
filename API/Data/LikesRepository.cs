@@ -60,11 +60,6 @@ namespace API.Data
             return await PagedList<MemberDto>.CreateAsync(query, likesParams.PageNumber, likesParams.PageSize);
         }
 
-        public async Task<bool> SaveChanges()
-        {
-            return await context.SaveChangesAsync() > 0;
-        }
-
         public async Task<UserLike?> UserLike(int sourceUserId, int tarketUserId)
         {
             return await context.Likes.FindAsync(sourceUserId, tarketUserId);
