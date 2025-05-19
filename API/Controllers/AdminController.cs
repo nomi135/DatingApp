@@ -55,6 +55,7 @@ namespace API.Controllers
         [HttpGet("photos-to-moderate")]
         public ActionResult GetPhotosForModeration()
         {
+            //work here pending
             return Ok("Admins or moderators can see this");
         }
     }
